@@ -2,6 +2,7 @@ with Env_Log;
 
 procedure Test_Main is
 begin
+    -- use the environment variable ADA_LOG to set different log levels
     Env_Log.Initialize;
 
     Env_Log.Error ("error message");
