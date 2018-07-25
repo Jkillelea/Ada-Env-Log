@@ -7,14 +7,14 @@ package Env_Log is
     Log_Level : Log_Level_Type := Error;
 
     procedure Initialize;
-    procedure Trace (Message : in String);
-    procedure Debug (Message : in String);
-    procedure Warn  (Message : in String);
-    procedure Error (Message : in String);
+    procedure Trace (Message : String);
+    procedure Debug (Message : String);
+    procedure Warn  (Message : String);
+    procedure Error (Message : String);
 
 private
     Initialized : Boolean := False;
 
-    procedure Log_With_Level (Message : in String; 
+    procedure Log_With_Level (Message : String; 
                               Level   : Log_Level_Type);
 end Env_Log;
