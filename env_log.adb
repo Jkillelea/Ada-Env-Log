@@ -20,7 +20,7 @@ package body Env_Log is
     begin
         Log_Level := Get_Log_Level;
         Initialized := True;
-        Error ("Log level is " & Log_Level'Img);
+        Debug ("Log level is " & Log_Level'Img);
     end Initialize;
 
     -- Trace --
