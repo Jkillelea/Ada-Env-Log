@@ -4,11 +4,8 @@ package body Env_Log is
     -- Read the environment variable ADA_LOG
     -- Default to log level of Error on spurious input
     function Get_Log_Level return Log_Level_Type is
-        Log_Level_String : String := Ada.Environment_Variables.Value ("ADA_LOG", "ERROR"); -- default value
-        Level : Log_Level_Type := Error;
     begin
-        Level := Log_Level_Type'Value (Log_Level_String); -- can fail
-        return Level;
+        return Log_Level_Type'Value (Ada.Environment_Variables.Value ("ADA_LOG")); -- can fail
     exception
         when others =>    -- anything goes wrong
             return Error; -- default to least verbose and only report errors
